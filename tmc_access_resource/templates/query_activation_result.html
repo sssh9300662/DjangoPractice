@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Activation Result</title>
+</head>
+<nav>
+    <a href="{% url 'home' %}">Home</a>
+</nav>
+Here are Contract <b>{{contract_name}}</b> Activation Result:<br>
+<table cellpadding="10" border='1'>
+    <tr>
+        <th>Account</th>
+        <th>Name</th>
+        <th>Action</th>
+        <th>Status</th>
+    </tr>
+    {% for command in commands %}
+    <tr>
+        <td>{{account}}</td>
+        <td>{{command.Name}}</td>
+        <td>{{command.Action__c}}</td>
+        <td>{{command.Status__c}}</td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
